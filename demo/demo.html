@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="jquery.go-binary.min.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet" type="text/css">
+		<style>
+		body {
+			background-color: cadetblue;
+		}
+		
+		input#inputText {
+			width: 100%;
+			font-size: 1.5em;
+			background: none;
+			border: none;
+			border-bottom: 1px solid gainsboro;
+			font-family: 'Droid Sans Mono';
+			padding: 20px;
+		}
+		
+		div#demoWrapper {
+			width: 80%;
+			margin: 0 auto;
+			margin-top: 10em;
+			font-family: 'Droid Sans Mono';
+		}
+		
+		div#text {
+			color: azure;
+			padding: 10px 20px;
+			font-size: 2em;
+			margin-bottom: 5em;
+		}
+		
+		input#inputText:focus {
+			outline: none;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="demoWrapper">
+			<div id="text">_</div>
+			<input id="inputText" type="text" value="Write text here and press ENTER!">
+		</div>
+		<script>
+			$(document).ready(function() {
+				setTimeout(function(){
+					$("#text").goBinary({text:"Write text on input below and press enter!."});
+				},500)
+				$("#inputText").focus();
+				$("#inputText").keydown(function(e){
+					if(e.keyCode == 13){
+						$("#text").goBinary({text:$("#inputText").val()});
+					}
+				});
+				$("#inputText").focus(function(){
+					$("#inputText").val('');
+				})
+			});
+		</script>
+	</body>
+</html>
