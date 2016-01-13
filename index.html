@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Jquery.go-binary by frikinside</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Jquery.go-binary</h1>
+      <h2 class="project-tagline">A simple plugin to randomize every letter of a text in a binary style</h2>
+      <a href="https://github.com/frikinside/jquery.go-binary" class="btn">View on GitHub</a>
+      <a href="https://github.com/frikinside/jquery.go-binary/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/frikinside/jquery.go-binary/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="go-binary-jquery-plugin" class="anchor" href="#go-binary-jquery-plugin" aria-hidden="true"><span class="octicon octicon-link"></span></a>Go Binary jQuery plugin</h1>
+
+<p>A simple plugin to randomize every letter of a text in a binary style</p>
+
+<h2>
+<a id="live-demo" class="anchor" href="#live-demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Live Demo</h2>
+
+<p><a href="http://frikinside.github.io/jquery.go-binary/">http://frikinside.github.io/jquery.go-binary/</a></p>
+
+<h2>
+<a id="instalation" class="anchor" href="#instalation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Instalation</h2>
+
+<p>Include script after the include of jQuery library</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>/path/to/jquery.go-binary.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+
+<h3>
+<a id="npm" class="anchor" href="#npm" aria-hidden="true"><span class="octicon octicon-link"></span></a>npm</h3>
+
+<p>You can use npm for install the plugin</p>
+
+<pre lang="npm"><code>npm install go-binary
+</code></pre>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>selector<span class="pl-pds">"</span></span>).<span class="pl-en">goBinary</span>();</pre></div>
+
+<h3>
+<a id="basic-example" class="anchor" href="#basic-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic Example</h3>
+
+<h4>
+<a id="html" class="anchor" href="#html" aria-hidden="true"><span class="octicon octicon-link"></span></a>HTML</h4>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">button</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>go-binary<span class="pl-pds">"</span></span>&gt;START GO-BINARY&lt;/<span class="pl-ent">button</span>&gt;
+&lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>text<span class="pl-pds">"</span></span>&gt;
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a efficitur est.
+&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+
+<h4>
+<a id="js" class="anchor" href="#js" aria-hidden="true"><span class="octicon octicon-link"></span></a>JS</h4>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-c1">document</span>).<span class="pl-en">ready</span>(<span class="pl-k">function</span>() {
+    <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>button#go-binary<span class="pl-pds">"</span></span>).<span class="pl-c1">click</span>(<span class="pl-k">function</span>(){
+        <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>#text<span class="pl-pds">"</span></span>).<span class="pl-en">goBinary</span>();
+    });
+});</pre></div>
+
+<h3>
+<a id="settings-options" class="anchor" href="#settings-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Settings options</h3>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">$</span>.<span class="pl-smi">fn</span>.<span class="pl-smi">goBinary</span>.<span class="pl-smi">defaults</span> <span class="pl-k">=</span> {
+    text<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>, <span class="pl-c">// text to be binaryzed instead nodes text</span>
+    stepsUntilFixed<span class="pl-k">:</span> <span class="pl-c1">2</span>, <span class="pl-c">// how many steps are needed to fix a character</span>
+    sps<span class="pl-k">:</span> <span class="pl-c1">25</span>, <span class="pl-c">// steps per second</span>
+    matchRE<span class="pl-k">:</span><span class="pl-sr"> <span class="pl-pds">/</span><span class="pl-c1">[<span class="pl-k">^</span><span class="pl-c1">\s</span>]</span><span class="pl-pds">/</span></span>, <span class="pl-c">// Wich characters are going to be binary</span>
+    mode<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>shuffle<span class="pl-pds">'</span></span>, <span class="pl-c">// How write the text with 3 possible values ['shuffle','type','endless']</span>
+    <span class="pl-en">callback</span><span class="pl-k">:</span> <span class="pl-k">function</span>(){}, <span class="pl-c">// A callback function to be called when method finished executing</span>
+    spsFormulaBasedOnTextLength<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>0<span class="pl-pds">'</span></span> <span class="pl-c">// A formula to add sps base on length of text. The word 'length' gets replaced with the text length, for example: 'length/2' it's a valid formula and adds half of the text length as sps, so with a base sps of 50 and a text length of 100, it would add another 50 sps, being 100 sps the final speed.</span>
+};</pre></div>
+
+<h4>
+<a id="set-settings" class="anchor" href="#set-settings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Set settings</h4>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>#text<span class="pl-pds">"</span></span>).<span class="pl-en">goBinary</span>(
+    {
+        text<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>This is the text to be binaryzed instead of the text content of the node with id = text.<span class="pl-pds">'</span></span>,
+        stepsUntilFixed<span class="pl-k">:</span> <span class="pl-c1">5</span>,
+        mode<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>type<span class="pl-pds">'</span></span>,
+        <span class="pl-en">callback</span><span class="pl-k">:</span> <span class="pl-k">function</span>(){ <span class="pl-c1">alert</span>(<span class="pl-s"><span class="pl-pds">'</span>FINISH!<span class="pl-pds">'</span></span>); },
+        spsFormulaBasedOnTextLength<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>length/10<span class="pl-pds">'</span></span> 
+    }
+);</pre></div>
+
+<h3>
+<a id="methods" class="anchor" href="#methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methods</h3>
+
+<ul>
+<li>
+<strong>stop</strong>: Stop method to cancel the binary animation on endless mode.</li>
+</ul>
+
+<h4>
+<a id="invoke-methods" class="anchor" href="#invoke-methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Invoke methods</h4>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>#text<span class="pl-pds">"</span></span>).<span class="pl-en">goBinary</span>(<span class="pl-s"><span class="pl-pds">'</span>stop<span class="pl-pds">'</span></span>);</pre></div>
+
+<h2>
+<a id="to-do" class="anchor" href="#to-do" aria-hidden="true"><span class="octicon octicon-link"></span></a>TO-DO</h2>
+
+<ul>
+<li>Maybe adds more options for the endless mode and stopping the endless mode in more fashion ways.</li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/frikinside/jquery.go-binary">Jquery.go-binary</a> is maintained by <a href="https://github.com/frikinside">frikinside</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
