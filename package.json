@@ -1,0 +1,23 @@
+{
+  "name": "go-binary",
+  "version": "1.0.0",
+  "description": "A simple plugin to randomize every letter of a text in a binary style.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frikinside/jquery.go-binary.git"
+  },
+  "keywords": [
+    "jquery-plugin",
+    "jquery",
+    "plugins"
+  ],
+  "author": "frikinside",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/frikinside/jquery.go-binary/issues"
+  },
+  "homepage": "https://github.com/frikinside/jquery.go-binary#readme"
+}

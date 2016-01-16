@@ -1,6 +1,6 @@
 # Go Binary jQuery plugin
 
-A simple plugin to randomize every letter of a text in a binary style
+A simple plugin to randomize every letter of a text in a binary style.
 
 ## Live Demo
 
