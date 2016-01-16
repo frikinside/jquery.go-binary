@@ -54,7 +54,7 @@
 			
 			return this;
         },
-        stop : function( ) { $(this).data('go-binary-stop',true); },
+        stop : function( ) { $(this).data('go-binary-stop',true);return $(this); },
     };
  
     $.fn.goBinary = function( methodOrOptions ) {
